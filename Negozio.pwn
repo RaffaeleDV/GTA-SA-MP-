@@ -1,6 +1,5 @@
-// FS per comprare armi e  tramite menu
-//Creato da Raffy002
-//Mi scoccio di commentate ç_ç ma se lo prendete lasciate i crediti o un maledizione vi colpira D:
+// FS per comprare armi tramite menu
+//Aug 3rd, 2011
 
 #include <a_samp>
 
@@ -14,7 +13,7 @@
 public OnFilterScriptInit()
 {
 	print("\n--------------------------------------");
-	print(" FS by Raffy002");
+	print(" FS");
 	print("--------------------------------------\n");
 	return 1;
 }
