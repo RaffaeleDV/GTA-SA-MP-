@@ -1,14 +1,14 @@
-Dialog:
+**Dialog:**
 
 
 
 I Dialog sono dei menu di vario tipo introdotti per sostituire i vecchi menu
 
 Per crearli si usa la funzione:
-'''
-CODICE
-ShowPlayerDialog(playerid, dialogid, stile, titolo, info, tasto1, tasto2)
-'''
+
+
+``` ShowPlayerDialog(playerid, dialogid, stile, titolo, info, tasto1, tasto2) ```
+
 
 
 playerid: il player che compie l'azione
@@ -16,8 +16,8 @@ playerid: il player che compie l'azione
 dialogid: l'id del dialog che va definito
 
 
-CODICE
-#define DIALOGPOLIZIA 1234
+
+```#define DIALOGPOLIZIA 1234```
 
 
 Attenzione a non creare mai dialog con lo stesso nome/id poiché andrebbero in conflitto
@@ -32,30 +32,11 @@ Gli stili per i dialog sono 4:
 
 DIALOG_STYLE_MSGBOX = è una finestra in cui c'è solamente il testo con i pulsanti, quindi è usata per inviare un messaggio al player
 
-SPOILER (clicca per visualizzare)
-
-
-
-
 DIALOG_STYLE_INPUT = è un finestra in cui potremmo far scrivere qualcosa al player sempre con i 2 tasti
-
-SPOILER (clicca per visualizzare)
-
-
-
 
 DIALOG_STYLE_LIST = è una finestra in cui possiamo far comparire una lista o sottoliste
 
-SPOILER (clicca per visualizzare)
-
-
-
 DIALOG_STYLE_PASSWORD = è una finestra identica a DIALOG_STYLE_INPUT solo che quello che scriveremo non sarà visualizzato (Pallini) è usato nella registrazione per l'inserimento della password.
-
-SPOILER (clicca per visualizzare)
-
-
-
 
 Titolo: è il nome che visualizzeremo in cima al dialog e va inserito tra "" (virgolette)
 
@@ -63,10 +44,7 @@ Info: è quello che inseriremo nel dialog e differenzia a seconda dello stile.
 
 Nello stile DIALOG_STYLE_LIST andranno messe le info che compariranno nella lista
 
-
-CODICE
-ShowPlayerDialog(playerid, 1234, 2, "TITOLO", "INFO1\nINFO2\nINFO3", "Accetta", "Annulla");
-
+```ShowPlayerDialog(playerid, 1234, 2, "TITOLO", "INFO1\nINFO2\nINFO3", "Accetta", "Annulla");```
 
 
 Il \n serve per andare a capo e deve esser messo tra le info
@@ -80,18 +58,19 @@ Tasto2: Il tasto2 è il tasto di destra e corrisponde ad una risposta negativa d
 Esempio:
 
 
-CODICE
+```
 #define DIALOGLOGIN 5678
 ShowPlayerDialog(playerid, 5678, 0, "Benvenuto", "Benvenuto nel server", "OK", "");
+```
 
 
 
 Ora andremo a spiegare il callback
 
 
-CODICE
+```
 OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
-
+```
 
 
 playerid: il player che guarda il dialog
@@ -109,7 +88,7 @@ Questo Callback serve per controllare quale bottone preme il player, cosa digita
 Ora faremo un esempio:
 
 
-CODICE
+```
 #define DIALOGARMI 9876
 ShowPlayerDialog(playerid, 9876, 2, "Armeria", "Arma1\nArma2\nArma3", "Compra", "Annulla");
 
@@ -134,7 +113,7 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
     }
     return 1;
 }
-
+```
 
 Al posto del case e dello switch possiamo anche usare if anche se poi diventa più lungo
 
@@ -143,7 +122,7 @@ Se vogliamo creare più sottomenù andremo ad inserire ShowPlayerDialog nella li
 Prima abbiamo visto il player quale info sceglie ora controlleremo casa scriverà nel dialog
 
 
-CODICE
+```
 #define DIALOGPAROLA 1111
 ShowPlayerDialog(playerid, 1111, 1, "Parola D'ordine", "Digita la parola d'ordine", "OK", "Annulla");
 
@@ -165,4 +144,4 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
    }
    return 1;
 }
-
+```
